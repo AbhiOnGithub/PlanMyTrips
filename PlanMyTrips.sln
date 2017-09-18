@@ -1,11 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlanMyTrips", "TodoDocumentDB\PlanMyTrips.shproj", "{F36B04D4-9EB8-42D8-854A-E3920260E7FC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanMyTrips.iOS", "iOS\PlanMyTrips.iOS.csproj", "{BBDE867E-A90E-4F2B-8F80-DC42A3AD8DD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanMyTrips.Droid", "Droid\PlanMyTrips.Droid.csproj", "{00098FF5-6AD4-49F1-96FA-286466BE218F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlanMyTrips", "PlanMyTrips\PlanMyTrips.shproj", "{F36B04D4-9EB8-42D8-854A-E3920260E7FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
