@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="PlanMyTrips.CityToVisitPage" 
-    Title="Cities You Visit">
-	<StackLayout Margin="20" VerticalOptions="StartAndExpand">
-		<Label Text="Name" />
-		<Entry Text="{Binding Path=Name}" Placeholder="Enter City to Visit" />
-		<Label Text="Notes" />
-		<Entry Text="{Binding Path=Notes}" />
-		<Label Text="Visited ?" />
-		<Switch IsToggled="{Binding Path=Visited}" />
-		<Button Text="Save" Clicked="OnSaveActivated" />
-		<Button Text="Delete" Clicked="OnDeleteActivated" />
-		<Button Text="Cancel" Clicked="OnCancelActivated" />
-	</StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PlanMyTrips.CityToVisitPage" Title="Cities You Visit">
+    <Grid Margin="10" ColumnSpacing="20" RowSpacing="20" VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="Name" Grid.Row="0" Grid.Column="0" />
+        <Entry Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Name}" Placeholder="Enter City to Visit" />
+        <Label Grid.Row="1" Grid.Column="0" Text="Notes"  VerticalOptions="End"/>
+        <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Path=Notes}" Placeholder="Notes"  />
+        <Label Grid.Row="3" Grid.Column="0" Text="Planned Days" />
+        <Picker x:Name="PlannedDayPicker" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectedIndex="0" SelectedItem="{Binding Path=PlannedDays}">
+            <Picker.Items>
+                <x:String>Less than 3 days</x:String>
+                <x:String>3 to 7 days</x:String>
+                <x:String>1 to 2 weeks</x:String>
+                <x:String>More than 2 weeks</x:String>
+                <x:String>More than a Month</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Grid.Row="4" Grid.Column="0" Text="Visited ?" />
+        <Switch Grid.Row="4" Grid.Column="1" IsToggled="{Binding Path=Visited}" />
+        <Button Grid.Row="5" Grid.Column="0" Text="Save" Clicked="OnSaveActivated" Margin="10" />
+        <Button Grid.Row="5" Grid.Column="1" Text="Cancel" Clicked="OnCancelActivated" Margin="10" />
+        <Button Grid.Row="5" Grid.Column="2" Text="Delete" Clicked="OnDeleteActivated" Margin="10" />
+    </Grid>
 </ContentPage>
