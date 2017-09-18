@@ -7,4 +7,6 @@ Mainly to showcase how to build planet scale mobile apps using Azure Cosmos DB a
 For more details visit this blog post 
 https://cloudandmobileblog.com/2017/08/17/building-planet-scale-mobile-app-using-azure-cosmos-db/
 
+![Cover](https://github.com/abhiongithub/PlanMyTrips/blob/master/Screenshots/earth.png)
+
 ![Screenshot](https://github.com/abhiongithub/PlanMyTrips/blob/master/Screenshots/iOS%20and%20Android.png)
