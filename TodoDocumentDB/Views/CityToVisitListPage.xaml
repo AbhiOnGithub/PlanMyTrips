@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="PlanMyTrips.CityToVisitListPage" Title="City To Visit">
+	<ContentPage.ToolbarItems>
+        <ToolbarItem Icon="plus.png" Clicked="OnCityAdded" />
+    </ContentPage.ToolbarItems>
+	<ListView x:Name="listView" Margin="20" ItemSelected="OnCitySelected">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout Margin="20,0,0,0" Orientation="Horizontal">
+						<Label Text="{Binding Name}" VerticalTextAlignment="Center" />
+						<Image Source="check.png" IsVisible="{Binding Visited}"
+                        HorizontalOptions="EndAndExpand" />
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>
