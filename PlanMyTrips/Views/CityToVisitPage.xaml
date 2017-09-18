@@ -20,7 +20,7 @@
         <Label Grid.Row="1" Grid.Column="0" Text="Notes"  VerticalOptions="End"/>
         <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Path=Notes}" Placeholder="Notes"  />
         <Label Grid.Row="3" Grid.Column="0" Text="Planned Days" />
-        <Picker x:Name="PlannedDayPicker" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectedIndex="0" SelectedItem="{Binding Path=PlannedDays}">
+        <Picker x:Name="PlannedDayPicker" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectedItem="{Binding Path=PlannedDays}">
             <Picker.Items>
                 <x:String>Less than 3 days</x:String>
                 <x:String>3 to 7 days</x:String>

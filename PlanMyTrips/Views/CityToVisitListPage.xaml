@@ -3,16 +3,16 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="plus.png" Clicked="OnCityAdded" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView" Margin="20" ItemSelected="OnCitySelected">
+    <ListView x:Name="listView" Margin="20"  ItemSelected="OnCitySelected" RowHeight="60">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout>
-                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal">
+                <ViewCell >
+                    <StackLayout Margin="20,0">
+                        <StackLayout   Orientation="Horizontal"> 
                             <Label Text="{Binding Name}" VerticalTextAlignment="Center" />
                             <Image Source="check.png" IsVisible="{Binding Visited}" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
-                        <Label Text="{Binding PlannedDays}" VerticalTextAlignment="Center" />
+                        <Label Text="{Binding PlannedDays}" VerticalTextAlignment="Center" FontSize="Small"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
