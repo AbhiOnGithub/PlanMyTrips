@@ -12,7 +12,10 @@ namespace PlanMyTrips
             InitializeComponent();
 
             isNewcity = isNew;
-
+            if (isNewcity)
+                this.Title = "Add a new Place";
+            else
+                this.Title = "Place Details";
         }
 
 
