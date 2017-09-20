@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="PlanMyTrips.CityToVisitListPage"
-    Title="Places To Visit" BackgroundColor="Purple">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="plus.png" Clicked="OnCityAdded" />
-    </ContentPage.ToolbarItems>
-    <ListView x:Name="listView" BackgroundColor="Purple" SeparatorColor="Yellow"
-        Margin="10" HasUnevenRows="true" ItemSelected="OnCitySelected" RowHeight="60">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell >
-                    <StackLayout Margin="20,0">
-                        <StackLayout   Orientation="Horizontal"> 
-                            <Label FontSize="24" TextColor="White" Text="{Binding Name}" VerticalTextAlignment="Center" />
-                            <Image Source="check.png" IsVisible="{Binding Visited}" HorizontalOptions="EndAndExpand" />
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PlanMyTrips.CityToVisitListPage" Title="Places To Visit" BackgroundColor="Purple">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Icon="plus.png"  />
+    </ContentPage.ToolbarItems>-->
+    <StackLayout VerticalOptions="FillAndExpand">
+       
+        <ListView x:Name="listView" VerticalOptions="FillAndExpand" BackgroundColor="Purple" SeparatorColor="Yellow" Margin="10" HasUnevenRows="true" ItemSelected="OnCitySelected" RowHeight="160">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="20,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="24" TextColor="White" Text="{Binding Name}" VerticalTextAlignment="Center" />
+                                <Image Source="check.png" IsVisible="{Binding Visited}" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                            <Label TextColor="White" VerticalTextAlignment="Center" FontSize="Small" Text="{Binding PlannedDays, StringFormat='Planned Days - {0}'}" />
                         </StackLayout>
-                        <Label TextColor="White" VerticalTextAlignment="Center" FontSize="Small"
-                        Text="{Binding PlannedDays, StringFormat='Planned Days - {0}'}" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Image="plus" Text="Add a place" TextColor="White" FontSize="Large" Clicked="OnCityAdded" VerticalOptions="End" BackgroundColor="Navy" />
+    </StackLayout>
 </ContentPage>
