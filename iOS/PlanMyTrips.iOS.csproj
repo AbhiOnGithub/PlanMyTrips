@@ -134,6 +134,7 @@
     <BundleResource Include="Resources\check.png" />
     <BundleResource Include="Resources\check%402x.png" />
     <BundleResource Include="Resources\plus.png" />
+    <BundleResource Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="..\PlanMyTrips\PlanMyTrips.projitems" Label="Shared" Condition="Exists('..\PlanMyTrips\PlanMyTrips.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
