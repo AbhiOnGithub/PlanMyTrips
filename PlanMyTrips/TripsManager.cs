@@ -22,7 +22,7 @@ namespace PlanMyTrips
 			return documentDBService.CreateDocumentCollection(databaseName, collectionName);
 		}
 
-		public Task<List<CityToVisit>> GetCitiesAsync()
+		public Task<IList<CityToVisit>> GetCitiesAsync()
 		{
 			return documentDBService.GetCitiesAsync();
 		}

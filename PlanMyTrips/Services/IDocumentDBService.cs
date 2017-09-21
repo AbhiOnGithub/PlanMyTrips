@@ -9,7 +9,7 @@ namespace PlanMyTrips
 
 		Task CreateDocumentCollection(string databaseName, string collectionName);
 
-		Task<List<CityToVisit>> GetCitiesAsync();
+		Task<IList<CityToVisit>> GetCitiesAsync();
 
 		Task SaveCityAsync(CityToVisit city, bool isNewCity);
 

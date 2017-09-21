@@ -58,7 +58,7 @@ namespace PlanMyTrips
 			}
 		}
 
-		public async Task<List<CityToVisit>> GetCitiesAsync()
+		public async Task<IList<CityToVisit>> GetCitiesAsync()
 		{
 			cities = new List<CityToVisit>();
 

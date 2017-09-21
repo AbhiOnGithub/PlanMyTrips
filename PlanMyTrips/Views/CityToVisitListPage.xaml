@@ -2,17 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="PlanMyTrips.CityToVisitListPage" 
-    Title="PLAN MY TRIP" BackgroundColor="Purple">
-    <StackLayout BackgroundColor="Yellow" VerticalOptions="FillAndExpand" Margin="2">
+    Title="PLAN MY TRIP" BackgroundColor="#FFFFFF">
+    <StackLayout BackgroundColor="#FFFFFF" VerticalOptions="FillAndExpand" Margin="2">
         <Grid Margin="2" HeightRequest="40" HorizontalOptions="Fill">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-            <Button TextColor="Purple" Text="Show All" BorderWidth="1" BorderColor="" Grid.Column="0" BackgroundColor="#B7B700" />
-            <Button TextColor="Purple" Text="Visited" BorderWidth="1" BorderColor="Purple" Grid.Column="1" BackgroundColor="Yellow" />
-            <Button TextColor="Purple" Text="Not Visited" BorderWidth="1" BorderColor="Purple" Grid.Column="2" BackgroundColor="Yellow" />
+            <Button BorderRadius="1" TextColor="#800080" x:Name="btnShowAll" Clicked="OnShowAllClicked" Text="Show All" BorderWidth="1" BorderColor="#800080" Grid.Column="0" BackgroundColor="#FFFFFF" />
+            <Button TextColor="#800080" x:Name="btnVisited" Clicked="OnVisitedClicked" Text="Visited" BorderWidth="1" BorderColor="#800080" Grid.Column="1" BackgroundColor="#FFFFFF" />
+            <Button TextColor="#800080" x:Name="btnNotVisited" Clicked="OnNotVisitedClicked" Text="Not Visited" BorderWidth="1" BorderColor="#800080" Grid.Column="2" BackgroundColor="#FFFFFF" />
         </Grid>
         <ListView x:Name="listView" VerticalOptions="FillAndExpand" BackgroundColor="Purple" SeparatorColor="Yellow" Margin="2,0,2,2" 
             HasUnevenRows="true" ItemSelected="OnCitySelected" RowHeight="100">
@@ -33,6 +33,6 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button Image="add" BorderColor="Purple" BorderWidth="3" Text="Add New"  TextColor="Purple" Font="Bold,24" 
-        Clicked="OnCityAdded" VerticalOptions="End" BackgroundColor="Yellow" Margin="8,0,8,8" />
+        Clicked="OnCityAdded" VerticalOptions="End" BackgroundColor="#FFFFFF" Margin="8,0,8,8" />
     </StackLayout>
 </ContentPage>
