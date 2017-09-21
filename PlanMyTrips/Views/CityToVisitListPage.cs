@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace PlanMyTrips
 {
@@ -25,29 +26,24 @@ namespace PlanMyTrips
 
             listView.ItemsSource = cities;
             this.IsBusy = false;
+            await AnimateShowAllBtn();
 		}
 
         public async void OnShowAllClicked(object sender, EventArgs e)
         {
-			await btnShowAll.ScaleTo(0.95, 50, Easing.CubicOut);
-			await btnShowAll.ScaleTo(1, 50, Easing.CubicIn);
-
+            await AnimateShowAllBtn();
             listView.ItemsSource = cities;
         }
 
 		public async void OnVisitedClicked(object sender, EventArgs e)
 		{
-			await btnVisited.ScaleTo(0.95, 50, Easing.CubicOut);
-			await btnVisited.ScaleTo(1, 50, Easing.CubicIn);
-
+            await AnimateVisitedBtn();
             listView.ItemsSource = cities.Where(c => c.Visited.Equals(true) ).ToList();
 		}
 
 		public async void OnNotVisitedClicked(object sender, EventArgs e)
 		{
-			await btnNotVisited.ScaleTo(0.95, 50, Easing.CubicOut);
-			await btnNotVisited.ScaleTo(1, 50, Easing.CubicIn);
-
+            await AnimateNotVisitedBtn();	
             listView.ItemsSource = cities.Where(c => c.Visited.Equals(false)).ToList();
 		}
 
@@ -68,6 +64,33 @@ namespace PlanMyTrips
 			{
 				BindingContext = e.SelectedItem as CityToVisit
 			});
+		}
+
+        private async Task AnimateShowAllBtn()
+        {
+            await btnShowAll.ScaleTo(0.95, 50, Easing.CubicOut);
+            await btnShowAll.ScaleTo(1, 50, Easing.CubicIn);
+            btnShowAll.BackgroundColor = Color.LightGray;
+            btnVisited.BackgroundColor = Color.White;
+            btnNotVisited.BackgroundColor = Color.White;
+        }
+
+		private async Task AnimateVisitedBtn()
+		{
+			await btnVisited.ScaleTo(0.95, 50, Easing.CubicOut);
+			await btnVisited.ScaleTo(1, 50, Easing.CubicIn);
+			btnVisited.BackgroundColor = Color.LightGray;
+			btnNotVisited.BackgroundColor = Color.White;
+            btnShowAll.BackgroundColor = Color.White;
+		}
+
+		private async Task AnimateNotVisitedBtn()
+		{
+			await btnNotVisited.ScaleTo(0.95, 50, Easing.CubicOut);
+			await btnNotVisited.ScaleTo(1, 50, Easing.CubicIn);
+            btnNotVisited.BackgroundColor = Color.LightGray;
+			btnVisited.BackgroundColor = Color.White;
+            btnShowAll.BackgroundColor = Color.White;
 		}
 	}
 }
